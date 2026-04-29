@@ -187,7 +187,10 @@ transform:translateX(0);
 
 <script>
 
-if(localStorage.getItem("loggedIn") != "true"){
+const params =
+new URLSearchParams(window.location.search);
+
+if(params.get("access") != "true"){
 
 window.location.href =
 "https://gowindasamy.github.io/login/login.html";
@@ -238,12 +241,6 @@ alert("🚨 JEE MAIN 2026 ALERT 🚨\n\nStart your preparation now 🔥");
 
 </a>
 
-<br>
-
-<button onclick="logout()">
-🚪 Logout
-</button>
-
 </div>
 
 <footer>
@@ -282,15 +279,6 @@ margin:10px;
 </footer>
 
 <script>
-
-function logout(){
-
-localStorage.removeItem("loggedIn");
-
-window.location.href =
-"https://gowindasamy.github.io/login/login.html";
-
-}
 
 const canvas =
 document.getElementById("matrix");
