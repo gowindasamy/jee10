@@ -3,6 +3,9 @@
 <head>
 <title>🔥 JEE MAIN 2026 🔥</title>
 
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <style>
 
 body{
@@ -13,9 +16,10 @@ color:white;
 font-family:Arial;
 text-align:center;
 overflow-x:hidden;
+user-select:none;
 }
 
-/* Animated Background */
+/* Background */
 
 .bg{
 position:fixed;
@@ -35,7 +39,7 @@ animation:bgmove 12s ease infinite;
 z-index:-2;
 }
 
-/* Matrix Background */
+/* Matrix */
 
 #matrix{
 position:fixed;
@@ -46,7 +50,7 @@ height:100%;
 z-index:-1;
 }
 
-/* Main Content */
+/* Main */
 
 .container{
 margin-top:80px;
@@ -185,27 +189,99 @@ transform:translateX(0);
 
 <body>
 
-<script>
-
-const params =
-new URLSearchParams(window.location.search);
-
-if(params.get("access") != "true"){
-
-window.location.href =
-"https://gowindasamy.github.io/login/login.html";
-
-}
-
-</script>
-
 <div class="bg"></div>
 
 <canvas id="matrix"></canvas>
 
 <script>
 
-alert("🚨 JEE MAIN 2026 ALERT 🚨\n\nStart your preparation now 🔥");
+/* LOGIN ACCESS CHECK */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+if(
+params.get("access")
+!= "true"
+){
+
+window.location.href =
+"https://gowindasamy.github.io/jee/login.html";
+
+}
+
+/* ALERT */
+
+alert(
+"🚨 JEE MAIN 2026 ALERT 🚨\n\nStart your preparation now 🔥"
+);
+
+/* SCREENSHOT PROTECTION */
+
+/* Right Click Block */
+
+document.addEventListener(
+"contextmenu",
+e => e.preventDefault()
+);
+
+/* Print Screen Block */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "PrintScreen"
+){
+
+navigator.clipboard.writeText("");
+
+alert(
+"Screenshot Blocked 🚫"
+);
+
+}
+
+});
+
+/* Blur When Hidden */
+
+document.addEventListener(
+"visibilitychange",
+function(){
+
+if(document.hidden){
+
+document.body.style.filter =
+"blur(20px)";
+
+}
+
+else{
+
+document.body.style.filter =
+"blur(0px)";
+
+}
+
+});
+
+/* Drag Block */
+
+document.addEventListener(
+"dragstart",
+e => e.preventDefault()
+);
+
+/* Select Block */
+
+document.addEventListener(
+"selectstart",
+e => e.preventDefault()
+);
 
 </script>
 
@@ -223,7 +299,8 @@ alert("🚨 JEE MAIN 2026 ALERT 🚨\n\nStart your preparation now 🔥");
 
 <h2>👑 Owner : Gowindasamy</h2>
 
-<a href="JEE Mains syllabus 2026 PDF.pdf" target="_blank">
+<a href="JEE Mains syllabus 2026 PDF.pdf"
+target="_blank">
 
 <button>
 📘 JEE Syllabus PDF
@@ -233,7 +310,8 @@ alert("🚨 JEE MAIN 2026 ALERT 🚨\n\nStart your preparation now 🔥");
 
 <br>
 
-<a href="JEE Mains Formula Sheet PDF.pdf" target="_blank">
+<a href="JEE Mains Formula Sheet PDF.pdf"
+target="_blank">
 
 <button>
 📗 Formula Sheet PDF
@@ -279,6 +357,8 @@ margin:10px;
 </footer>
 
 <script>
+
+/* MATRIX EFFECT */
 
 const canvas =
 document.getElementById("matrix");
