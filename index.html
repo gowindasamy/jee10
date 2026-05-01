@@ -52,9 +52,14 @@ z-index:-1;
 /* Main */
 
 .container{
-margin-top:80px;
-padding-bottom:180px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px 20px 220px;
 animation:fade 2s;
+box-sizing:border-box;
 }
 
 /* Title */
@@ -66,6 +71,7 @@ text-shadow:
 0 0 10px red,
 0 0 20px cyan,
 0 0 30px lime;
+margin-bottom:25px;
 }
 
 /* Text */
@@ -76,6 +82,7 @@ margin:20px;
 color:white;
 text-shadow:0 0 15px cyan;
 animation:slide 2s;
+line-height:1.4;
 }
 
 /* Owner */
@@ -124,6 +131,38 @@ color:white;
 font-size:16px;
 backdrop-filter:blur(5px);
 box-shadow:0 0 15px cyan;
+}
+
+/* Desktop Responsive */
+
+@media(min-width:768px){
+
+.container{
+
+max-width:900px;
+margin:auto;
+
+}
+
+h1{
+font-size:90px;
+}
+
+p{
+font-size:38px;
+max-width:900px;
+line-height:1.5;
+}
+
+button{
+font-size:24px;
+padding:18px 45px;
+}
+
+footer{
+font-size:20px;
+}
+
 }
 
 /* Animations */
